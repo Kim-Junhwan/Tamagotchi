@@ -12,6 +12,10 @@
 		C74E9B292A7CEEB20001B602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74E9B272A7CEEB20001B602 /* Main.storyboard */; };
 		C74E9B2B2A7CEEB40001B602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74E9B2A2A7CEEB40001B602 /* Assets.xcassets */; };
 		C74E9B2E2A7CEEB40001B602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74E9B2C2A7CEEB40001B602 /* LaunchScreen.storyboard */; };
+		C74E9B3A2A7CF3730001B602 /* SelectTamagotchiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B392A7CF3730001B602 /* SelectTamagotchiViewController.swift */; };
+		C74E9B3C2A7CF3860001B602 /* DetailTamagotchiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B3B2A7CF3860001B602 /* DetailTamagotchiViewController.swift */; };
+		C74E9B3F2A7CF4490001B602 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B3E2A7CF4490001B602 /* Flow.swift */; };
+		C74E9B412A7CF4D00001B602 /* StoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B402A7CF4D00001B602 /* StoryBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		C74E9B2A2A7CEEB40001B602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C74E9B2D2A7CEEB40001B602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C74E9B2F2A7CEEB40001B602 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C74E9B392A7CF3730001B602 /* SelectTamagotchiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTamagotchiViewController.swift; sourceTree = "<group>"; };
+		C74E9B3B2A7CF3860001B602 /* DetailTamagotchiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTamagotchiViewController.swift; sourceTree = "<group>"; };
+		C74E9B3E2A7CF4490001B602 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		C74E9B402A7CF4D00001B602 /* StoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,7 @@
 		C74E9B372A7CF2040001B602 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C74E9B3D2A7CF4360001B602 /* Constraints */,
 				C74E9B352A7CF1F70001B602 /* App */,
 				C74E9B382A7CF28B0001B602 /* Presentation */,
 			);
@@ -92,8 +101,19 @@
 			isa = PBXGroup;
 			children = (
 				C74E9B272A7CEEB20001B602 /* Main.storyboard */,
+				C74E9B392A7CF3730001B602 /* SelectTamagotchiViewController.swift */,
+				C74E9B3B2A7CF3860001B602 /* DetailTamagotchiViewController.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		C74E9B3D2A7CF4360001B602 /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B3E2A7CF4490001B602 /* Flow.swift */,
+				C74E9B402A7CF4D00001B602 /* StoryBoard.swift */,
+			);
+			path = Constraints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,7 +187,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74E9B3A2A7CF3730001B602 /* SelectTamagotchiViewController.swift in Sources */,
+				C74E9B3F2A7CF4490001B602 /* Flow.swift in Sources */,
 				C74E9B222A7CEEB20001B602 /* AppDelegate.swift in Sources */,
+				C74E9B3C2A7CF3860001B602 /* DetailTamagotchiViewController.swift in Sources */,
+				C74E9B412A7CF4D00001B602 /* StoryBoard.swift in Sources */,
 				C74E9B242A7CEEB20001B602 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
