@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C74E9B222A7CEEB20001B602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B212A7CEEB20001B602 /* AppDelegate.swift */; };
 		C74E9B242A7CEEB20001B602 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B232A7CEEB20001B602 /* SceneDelegate.swift */; };
-		C74E9B262A7CEEB20001B602 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B252A7CEEB20001B602 /* ViewController.swift */; };
 		C74E9B292A7CEEB20001B602 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74E9B272A7CEEB20001B602 /* Main.storyboard */; };
 		C74E9B2B2A7CEEB40001B602 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C74E9B2A2A7CEEB40001B602 /* Assets.xcassets */; };
 		C74E9B2E2A7CEEB40001B602 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C74E9B2C2A7CEEB40001B602 /* LaunchScreen.storyboard */; };
@@ -19,7 +18,6 @@
 		C74E9B1E2A7CEEB20001B602 /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C74E9B212A7CEEB20001B602 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C74E9B232A7CEEB20001B602 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C74E9B252A7CEEB20001B602 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C74E9B282A7CEEB20001B602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C74E9B2A2A7CEEB40001B602 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C74E9B2D2A7CEEB40001B602 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,15 +54,46 @@
 		C74E9B202A7CEEB20001B602 /* Tamagotchi */ = {
 			isa = PBXGroup;
 			children = (
+				C74E9B362A7CF1FF0001B602 /* Resources */,
+				C74E9B372A7CF2040001B602 /* Sources */,
+			);
+			path = Tamagotchi;
+			sourceTree = "<group>";
+		};
+		C74E9B352A7CF1F70001B602 /* App */ = {
+			isa = PBXGroup;
+			children = (
 				C74E9B212A7CEEB20001B602 /* AppDelegate.swift */,
 				C74E9B232A7CEEB20001B602 /* SceneDelegate.swift */,
-				C74E9B252A7CEEB20001B602 /* ViewController.swift */,
-				C74E9B272A7CEEB20001B602 /* Main.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C74E9B362A7CF1FF0001B602 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				C74E9B2A2A7CEEB40001B602 /* Assets.xcassets */,
 				C74E9B2C2A7CEEB40001B602 /* LaunchScreen.storyboard */,
 				C74E9B2F2A7CEEB40001B602 /* Info.plist */,
 			);
-			path = Tamagotchi;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C74E9B372A7CF2040001B602 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B352A7CF1F70001B602 /* App */,
+				C74E9B382A7CF28B0001B602 /* Presentation */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		C74E9B382A7CF28B0001B602 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B272A7CEEB20001B602 /* Main.storyboard */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +167,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C74E9B262A7CEEB20001B602 /* ViewController.swift in Sources */,
 				C74E9B222A7CEEB20001B602 /* AppDelegate.swift in Sources */,
 				C74E9B242A7CEEB20001B602 /* SceneDelegate.swift in Sources */,
 			);
@@ -289,7 +317,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SBAHW5F54N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Tamagotchi/Info.plist;
+				INFOPLIST_FILE = Tamagotchi/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SBAHW5F54N;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Tamagotchi/Info.plist;
+				INFOPLIST_FILE = Tamagotchi/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
