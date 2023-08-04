@@ -16,6 +16,7 @@
 		C74E9B3C2A7CF3860001B602 /* DetailTamagotchiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B3B2A7CF3860001B602 /* DetailTamagotchiViewController.swift */; };
 		C74E9B3F2A7CF4490001B602 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B3E2A7CF4490001B602 /* Flow.swift */; };
 		C74E9B412A7CF4D00001B602 /* StoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B402A7CF4D00001B602 /* StoryBoard.swift */; };
+		C74E9B442A7CFDD60001B602 /* DefaultFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B432A7CFDD60001B602 /* DefaultFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C74E9B3B2A7CF3860001B602 /* DetailTamagotchiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTamagotchiViewController.swift; sourceTree = "<group>"; };
 		C74E9B3E2A7CF4490001B602 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		C74E9B402A7CF4D00001B602 /* StoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoard.swift; sourceTree = "<group>"; };
+		C74E9B432A7CFDD60001B602 /* DefaultFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +92,8 @@
 		C74E9B372A7CF2040001B602 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				C74E9B3D2A7CF4360001B602 /* Constraints */,
 				C74E9B352A7CF1F70001B602 /* App */,
+				C74E9B3D2A7CF4360001B602 /* Constraints */,
 				C74E9B382A7CF28B0001B602 /* Presentation */,
 			);
 			path = Sources;
@@ -100,6 +102,7 @@
 		C74E9B382A7CF28B0001B602 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C74E9B422A7CFDC30001B602 /* Utils */,
 				C74E9B272A7CEEB20001B602 /* Main.storyboard */,
 				C74E9B392A7CF3730001B602 /* SelectTamagotchiViewController.swift */,
 				C74E9B3B2A7CF3860001B602 /* DetailTamagotchiViewController.swift */,
@@ -114,6 +117,14 @@
 				C74E9B402A7CF4D00001B602 /* StoryBoard.swift */,
 			);
 			path = Constraints;
+			sourceTree = "<group>";
+		};
+		C74E9B422A7CFDC30001B602 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B432A7CFDD60001B602 /* DefaultFont.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74E9B442A7CFDD60001B602 /* DefaultFont.swift in Sources */,
 				C74E9B3A2A7CF3730001B602 /* SelectTamagotchiViewController.swift in Sources */,
 				C74E9B3F2A7CF4490001B602 /* Flow.swift in Sources */,
 				C74E9B222A7CEEB20001B602 /* AppDelegate.swift in Sources */,
