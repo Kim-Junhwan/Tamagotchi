@@ -17,13 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         let isLaunched = UserDefaults.standard.bool(forKey: Flow.startBranchCondition)
         let storyboard: UIStoryboard = UIStoryboard(name: StoryBoard.main, bundle: nil)
+        let navigationController: UINavigationController = UINavigationController()
         let presentViewController: UIViewController
         if !isLaunched {
             presentViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerIdenfier.selectTama)
         } else {
             presentViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerIdenfier.detailTama)
         }
-        window?.rootViewController = presentViewController
+        window?.rootViewController = navigationController
+        navigationController.viewControllers = [presentViewController]
         window?.makeKeyAndVisible()
     }
 
