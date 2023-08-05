@@ -20,6 +20,7 @@ class SelectTamagotchiViewController: UIViewController {
     private func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.register(UINib(nibName: SelectTamagotchiCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: SelectTamagotchiCollectionViewCell.identifier)
     }
 
 }
@@ -31,6 +32,8 @@ extension SelectTamagotchiViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectTamagotchiCollectionViewCell.identifier, for: indexPath) as? SelectTamagotchiCollectionViewCell else { return UICollectionViewCell() }
+        
+        return cell
     }
 }
