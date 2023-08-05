@@ -9,14 +9,14 @@ import UIKit
 
 class SelectTamagotchiCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var tamagotchiProfileView: TamagotchiProfileView!
+    
     static let identifier: String = "SelectTamagotchiCollectionViewCell"
 
-    @IBOutlet weak var tamagotchiImageView: UIImageView!
-    @IBOutlet weak var nameLabel: DefaultLabel!
     
     func configureCell(tamagotchi: Tamagotchi) {
-        tamagotchiImageView.image = tamagotchi.image
-        nameLabel.text = tamagotchi.name
+        tamagotchiProfileView.tamagotchImageView.image = tamagotchi.image
+        tamagotchiProfileView.nameLabel.text = tamagotchi.name
     }
     
     override func awakeFromNib() {

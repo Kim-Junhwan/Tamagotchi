@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,48 +17,24 @@
                 <rect key="frame" x="0.0" y="0.0" width="110" height="143"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="r1p-Qa-eg0">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iX1-Pj-wMz" customClass="TamagotchiProfileView" customModule="Tamagotchi" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="110" height="143"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YZY-f5-sZX">
-                                <rect key="frame" x="5.6666666666666643" y="0.0" width="99" height="99"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="YZY-f5-sZX" secondAttribute="height" multiplier="1:1" id="G8J-mf-WIK"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqP-GD-3UE" customClass="DefaultLabel" customModule="Tamagotchi" customModuleProvider="target">
-                                <rect key="frame" x="38.666666666666664" y="104" width="32.999999999999993" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" name="Default Font Color"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wqP-GD-3UE" secondAttribute="trailing" id="OE7-4Q-4Qa"/>
-                            <constraint firstItem="wqP-GD-3UE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="r1p-Qa-eg0" secondAttribute="leading" id="dha-Bi-JQR"/>
-                            <constraint firstItem="YZY-f5-sZX" firstAttribute="width" secondItem="r1p-Qa-eg0" secondAttribute="width" multiplier="0.9" id="gWV-8c-llm"/>
-                        </constraints>
-                    </stackView>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="r1p-Qa-eg0" secondAttribute="trailing" id="gbY-Vc-E3b"/>
-                <constraint firstItem="r1p-Qa-eg0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gom-Jr-lnF"/>
-                <constraint firstAttribute="bottom" secondItem="r1p-Qa-eg0" secondAttribute="bottom" id="ogK-qM-jvh"/>
-                <constraint firstItem="r1p-Qa-eg0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="tnG-0l-sYv"/>
+                <constraint firstAttribute="bottom" secondItem="iX1-Pj-wMz" secondAttribute="bottom" id="1UF-WP-Yns"/>
+                <constraint firstAttribute="trailing" secondItem="iX1-Pj-wMz" secondAttribute="trailing" id="BBe-T9-6yf"/>
+                <constraint firstItem="iX1-Pj-wMz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VDA-FP-K9J"/>
+                <constraint firstItem="iX1-Pj-wMz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mKY-64-gPf"/>
             </constraints>
             <size key="customSize" width="142" height="192"/>
             <connections>
-                <outlet property="nameLabel" destination="wqP-GD-3UE" id="ofp-Ci-38m"/>
-                <outlet property="tamagotchiImageView" destination="YZY-f5-sZX" id="bST-Tz-yQZ"/>
+                <outlet property="tamagotchiProfileView" destination="iX1-Pj-wMz" id="tOz-ao-krK"/>
             </connections>
             <point key="canvasLocation" x="146.37681159420291" y="45.870535714285715"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <namedColor name="Default Font Color">
-            <color red="0.30196078431372547" green="0.41568627450980394" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>
