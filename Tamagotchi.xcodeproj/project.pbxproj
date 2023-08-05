@@ -24,6 +24,7 @@
 		C74E9B512A7D26410001B602 /* Exp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B502A7D26410001B602 /* Exp.swift */; };
 		C74E9B552A7D3F310001B602 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B542A7D3F310001B602 /* Level.swift */; };
 		C74E9B5B2A7E0D800001B602 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B5A2A7E0D800001B602 /* Tamagotchi.swift */; };
+		C74E9B5D2A7E10580001B602 /* WaterDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B5C2A7E10580001B602 /* WaterDrop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C74E9B502A7D26410001B602 /* Exp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exp.swift; sourceTree = "<group>"; };
 		C74E9B542A7D3F310001B602 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		C74E9B5A2A7E0D800001B602 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
+		C74E9B5C2A7E10580001B602 /* WaterDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDrop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 			children = (
 				C74E9B562A7D40930001B602 /* Protocol */,
 				C74E9B4E2A7D25AF0001B602 /* Rice.swift */,
+				C74E9B5C2A7E10580001B602 /* WaterDrop.swift */,
 			);
 			path = Food;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C74E9B552A7D3F310001B602 /* Level.swift in Sources */,
+				C74E9B5D2A7E10580001B602 /* WaterDrop.swift in Sources */,
 				C74E9B442A7CFDD60001B602 /* DefaultFont.swift in Sources */,
 				C74E9B4F2A7D25AF0001B602 /* Rice.swift in Sources */,
 				C74E9B3A2A7CF3730001B602 /* SelectTamagotchiViewController.swift in Sources */,
