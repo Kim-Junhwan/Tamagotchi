@@ -9,6 +9,10 @@ import UIKit
 
 class SelectTamagotchiViewController: UIViewController {
     
+    private enum Sentence {
+        static let title: String = "다마고치 선택하기"
+    }
+    
     private enum Metric {
         static let cellWidth: Double = 110.0
         static let cellHeight: Double = 130.0
@@ -21,12 +25,8 @@ class SelectTamagotchiViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-    
-    override func updateViewConstraints() {
-        super.updateViewConstraints()
         setCollectionView()
+        title = Sentence.title
     }
     
     private func makeCollectionViewLayout() -> UICollectionViewFlowLayout {
