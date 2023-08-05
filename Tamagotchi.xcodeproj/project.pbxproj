@@ -25,6 +25,10 @@
 		C74E9B552A7D3F310001B602 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B542A7D3F310001B602 /* Level.swift */; };
 		C74E9B5B2A7E0D800001B602 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B5A2A7E0D800001B602 /* Tamagotchi.swift */; };
 		C74E9B5D2A7E10580001B602 /* WaterDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B5C2A7E10580001B602 /* WaterDrop.swift */; };
+		C74E9B642A7E14CB0001B602 /* SelectTamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B622A7E14CB0001B602 /* SelectTamagotchiCollectionViewCell.swift */; };
+		C74E9B652A7E14CB0001B602 /* SelectTamagotchiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C74E9B632A7E14CB0001B602 /* SelectTamagotchiCollectionViewCell.xib */; };
+		C74E9B672A7E31A60001B602 /* DefaultColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B662A7E31A60001B602 /* DefaultColor.swift */; };
+		C74E9B6A2A7E348C0001B602 /* DefaultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B692A7E348C0001B602 /* DefaultLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		C74E9B542A7D3F310001B602 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		C74E9B5A2A7E0D800001B602 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 		C74E9B5C2A7E10580001B602 /* WaterDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDrop.swift; sourceTree = "<group>"; };
+		C74E9B622A7E14CB0001B602 /* SelectTamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
+		C74E9B632A7E14CB0001B602 /* SelectTamagotchiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectTamagotchiCollectionViewCell.xib; sourceTree = "<group>"; };
+		C74E9B662A7E31A60001B602 /* DefaultColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultColor.swift; sourceTree = "<group>"; };
+		C74E9B692A7E348C0001B602 /* DefaultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +129,10 @@
 		C74E9B382A7CF28B0001B602 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				C74E9B682A7E34640001B602 /* Common */,
+				C74E9B5E2A7E14890001B602 /* SelectTamagotchi */,
 				C74E9B422A7CFDC30001B602 /* Utils */,
 				C74E9B272A7CEEB20001B602 /* Main.storyboard */,
-				C74E9B392A7CF3730001B602 /* SelectTamagotchiViewController.swift */,
 				C74E9B3B2A7CF3860001B602 /* DetailTamagotchiViewController.swift */,
 			);
 			path = Presentation;
@@ -142,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				C74E9B432A7CFDD60001B602 /* DefaultFont.swift */,
+				C74E9B662A7E31A60001B602 /* DefaultColor.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -215,6 +225,32 @@
 			path = Tamagotchi;
 			sourceTree = "<group>";
 		};
+		C74E9B5E2A7E14890001B602 /* SelectTamagotchi */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B5F2A7E14950001B602 /* Cell */,
+				C74E9B392A7CF3730001B602 /* SelectTamagotchiViewController.swift */,
+			);
+			path = SelectTamagotchi;
+			sourceTree = "<group>";
+		};
+		C74E9B5F2A7E14950001B602 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B622A7E14CB0001B602 /* SelectTamagotchiCollectionViewCell.swift */,
+				C74E9B632A7E14CB0001B602 /* SelectTamagotchiCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C74E9B682A7E34640001B602 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B692A7E348C0001B602 /* DefaultLabel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,6 +312,7 @@
 				C74E9B2E2A7CEEB40001B602 /* LaunchScreen.storyboard in Resources */,
 				C74E9B2B2A7CEEB40001B602 /* Assets.xcassets in Resources */,
 				C74E9B292A7CEEB20001B602 /* Main.storyboard in Resources */,
+				C74E9B652A7E14CB0001B602 /* SelectTamagotchiCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,13 +327,16 @@
 				C74E9B5D2A7E10580001B602 /* WaterDrop.swift in Sources */,
 				C74E9B442A7CFDD60001B602 /* DefaultFont.swift in Sources */,
 				C74E9B4F2A7D25AF0001B602 /* Rice.swift in Sources */,
+				C74E9B6A2A7E348C0001B602 /* DefaultLabel.swift in Sources */,
 				C74E9B3A2A7CF3730001B602 /* SelectTamagotchiViewController.swift in Sources */,
 				C74E9B4D2A7D25310001B602 /* Eatable.swift in Sources */,
 				C74E9B3F2A7CF4490001B602 /* Flow.swift in Sources */,
 				C74E9B512A7D26410001B602 /* Exp.swift in Sources */,
 				C74E9B222A7CEEB20001B602 /* AppDelegate.swift in Sources */,
 				C74E9B482A7D20E80001B602 /* TamagotchiController.swift in Sources */,
+				C74E9B672A7E31A60001B602 /* DefaultColor.swift in Sources */,
 				C74E9B3C2A7CF3860001B602 /* DetailTamagotchiViewController.swift in Sources */,
+				C74E9B642A7E14CB0001B602 /* SelectTamagotchiCollectionViewCell.swift in Sources */,
 				C74E9B5B2A7E0D800001B602 /* Tamagotchi.swift in Sources */,
 				C74E9B4B2A7D24CF0001B602 /* Feeding.swift in Sources */,
 				C74E9B412A7CF4D00001B602 /* StoryBoard.swift in Sources */,
