@@ -17,6 +17,13 @@
 		C74E9B3F2A7CF4490001B602 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B3E2A7CF4490001B602 /* Flow.swift */; };
 		C74E9B412A7CF4D00001B602 /* StoryBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B402A7CF4D00001B602 /* StoryBoard.swift */; };
 		C74E9B442A7CFDD60001B602 /* DefaultFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B432A7CFDD60001B602 /* DefaultFont.swift */; };
+		C74E9B482A7D20E80001B602 /* TamagotchiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B472A7D20E80001B602 /* TamagotchiController.swift */; };
+		C74E9B4B2A7D24CF0001B602 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B4A2A7D24CF0001B602 /* Feeding.swift */; };
+		C74E9B4D2A7D25310001B602 /* Eatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B4C2A7D25310001B602 /* Eatable.swift */; };
+		C74E9B4F2A7D25AF0001B602 /* Rice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B4E2A7D25AF0001B602 /* Rice.swift */; };
+		C74E9B512A7D26410001B602 /* Exp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B502A7D26410001B602 /* Exp.swift */; };
+		C74E9B552A7D3F310001B602 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B542A7D3F310001B602 /* Level.swift */; };
+		C74E9B5B2A7E0D800001B602 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74E9B5A2A7E0D800001B602 /* Tamagotchi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +39,13 @@
 		C74E9B3E2A7CF4490001B602 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 		C74E9B402A7CF4D00001B602 /* StoryBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoard.swift; sourceTree = "<group>"; };
 		C74E9B432A7CFDD60001B602 /* DefaultFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultFont.swift; sourceTree = "<group>"; };
+		C74E9B472A7D20E80001B602 /* TamagotchiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiController.swift; sourceTree = "<group>"; };
+		C74E9B4A2A7D24CF0001B602 /* Feeding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeding.swift; sourceTree = "<group>"; };
+		C74E9B4C2A7D25310001B602 /* Eatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eatable.swift; sourceTree = "<group>"; };
+		C74E9B4E2A7D25AF0001B602 /* Rice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rice.swift; sourceTree = "<group>"; };
+		C74E9B502A7D26410001B602 /* Exp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exp.swift; sourceTree = "<group>"; };
+		C74E9B542A7D3F310001B602 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		C74E9B5A2A7E0D800001B602 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +106,11 @@
 		C74E9B372A7CF2040001B602 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				C74E9B592A7E0D760001B602 /* Tamagotchi */,
+				C74E9B572A7E039B0001B602 /* Controller */,
 				C74E9B352A7CF1F70001B602 /* App */,
 				C74E9B3D2A7CF4360001B602 /* Constraints */,
+				C74E9B452A7D20C40001B602 /* Domain */,
 				C74E9B382A7CF28B0001B602 /* Presentation */,
 			);
 			path = Sources;
@@ -125,6 +142,74 @@
 				C74E9B432A7CFDD60001B602 /* DefaultFont.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C74E9B452A7D20C40001B602 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B492A7D22260001B602 /* UseCases */,
+				C74E9B462A7D20D00001B602 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		C74E9B462A7D20D00001B602 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B532A7D3F1E0001B602 /* Status */,
+				C74E9B522A7D3D950001B602 /* Food */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		C74E9B492A7D22260001B602 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B4A2A7D24CF0001B602 /* Feeding.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C74E9B522A7D3D950001B602 /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B562A7D40930001B602 /* Protocol */,
+				C74E9B4E2A7D25AF0001B602 /* Rice.swift */,
+			);
+			path = Food;
+			sourceTree = "<group>";
+		};
+		C74E9B532A7D3F1E0001B602 /* Status */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B502A7D26410001B602 /* Exp.swift */,
+				C74E9B542A7D3F310001B602 /* Level.swift */,
+			);
+			path = Status;
+			sourceTree = "<group>";
+		};
+		C74E9B562A7D40930001B602 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B4C2A7D25310001B602 /* Eatable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C74E9B572A7E039B0001B602 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B472A7D20E80001B602 /* TamagotchiController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C74E9B592A7E0D760001B602 /* Tamagotchi */ = {
+			isa = PBXGroup;
+			children = (
+				C74E9B5A2A7E0D800001B602 /* Tamagotchi.swift */,
+			);
+			path = Tamagotchi;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,11 +283,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C74E9B552A7D3F310001B602 /* Level.swift in Sources */,
 				C74E9B442A7CFDD60001B602 /* DefaultFont.swift in Sources */,
+				C74E9B4F2A7D25AF0001B602 /* Rice.swift in Sources */,
 				C74E9B3A2A7CF3730001B602 /* SelectTamagotchiViewController.swift in Sources */,
+				C74E9B4D2A7D25310001B602 /* Eatable.swift in Sources */,
 				C74E9B3F2A7CF4490001B602 /* Flow.swift in Sources */,
+				C74E9B512A7D26410001B602 /* Exp.swift in Sources */,
 				C74E9B222A7CEEB20001B602 /* AppDelegate.swift in Sources */,
+				C74E9B482A7D20E80001B602 /* TamagotchiController.swift in Sources */,
 				C74E9B3C2A7CF3860001B602 /* DetailTamagotchiViewController.swift in Sources */,
+				C74E9B5B2A7E0D800001B602 /* Tamagotchi.swift in Sources */,
+				C74E9B4B2A7D24CF0001B602 /* Feeding.swift in Sources */,
 				C74E9B412A7CF4D00001B602 /* StoryBoard.swift in Sources */,
 				C74E9B242A7CEEB20001B602 /* SceneDelegate.swift in Sources */,
 			);
