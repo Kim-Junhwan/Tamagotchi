@@ -28,7 +28,7 @@ enum Tamagotchi {
         case .happy:
             defaultImage = getSafeImage(imageNamed: "2-6")
         case .empty:
-            defaultImage = getSafeImage(imageNamed: "1-1")
+            defaultImage = getSafeImage(imageNamed: "noImage")
         }
         return defaultImage
     }
