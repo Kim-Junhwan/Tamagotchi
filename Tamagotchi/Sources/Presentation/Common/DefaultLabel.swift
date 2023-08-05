@@ -28,7 +28,7 @@ class DefaultLabel: UILabel {
     
     private func commonInit() {
         adjustsFontSizeToFitWidth = true
-        font = DefaultFont.bigBold.font
+        font = DefaultFont.bold.font(size: .big)
         layer.borderWidth = Metric.nameLabelBorderWidth
         layer.cornerRadius = Metric.nameLabelCornerRadius
         layer.borderColor = DefaultColor.defualtFontColor.cgColor
