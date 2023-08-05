@@ -20,7 +20,6 @@ enum Tamagotchi {
     
     var image: UIImage {
         let defaultImage: UIImage
-        
         switch self {
         case .twinkle:
             defaultImage = getSafeImage(imageNamed: "3-6")
@@ -32,5 +31,18 @@ enum Tamagotchi {
             defaultImage = getSafeImage(imageNamed: "1-1")
         }
         return defaultImage
+    }
+    
+    var name: String {
+        switch self {
+        case .twinkle:
+            return "반짝반짝 다마고치"
+        case .sting:
+            return "따끔따끔 다마고치"
+        case .happy:
+            return "방실방실 다마고치"
+        case .empty:
+            return "준비중이에요"
+        }
     }
 }
