@@ -11,4 +11,5 @@ enum Tamagotchi {
     case twinkle
     case sting
     case happy
+    case empty
 }
