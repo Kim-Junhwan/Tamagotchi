@@ -12,11 +12,16 @@ class SelectTamagotchiCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "SelectTamagotchiCollectionViewCell"
 
     @IBOutlet weak var tamagotchiImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameLabel: DefaultLabel!
+    
+    func configureCell(tamagotchi: Tamagotchi) {
+        tamagotchiImageView.image = tamagotchi.image
+        nameLabel.text = tamagotchi.name
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
 }
