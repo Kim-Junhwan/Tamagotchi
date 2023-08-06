@@ -58,12 +58,7 @@ class TamagotchiDetailPopupViewController: UIViewController {
     }
     
     private func drawButtonStackViewTopBorder() {
-        let border = CALayer()
-        let width = buttonStackView.bounds.width
-        let height = 0.5
-        border.frame = CGRect(x: 0, y: 0, width: width, height: height)
-        border.backgroundColor = DefaultColor.defualtFontColor.cgColor
-        buttonStackView.layer.addSublayer(border)
+        buttonStackView.drawBorderLine(height: 0.5, direction: .top)
     }
     
     private func cancelButtonLayout() {
