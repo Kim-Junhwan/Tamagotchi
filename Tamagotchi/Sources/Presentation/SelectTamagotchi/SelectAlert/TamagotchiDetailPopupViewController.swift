@@ -32,8 +32,13 @@ class TamagotchiDetailPopupViewController: UIViewController {
         tamagotchiProfileView.tamagotchImageView.image = selectTamagotchi.image
         tamagotchiProfileView.nameLabel.text = selectTamagotchi.name
         discussionLabel.text = selectTamagotchi.discussion
-        
         layout()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        alertView.layoutIfNeeded()
+        drawButtonStackViewTopBorder()
     }
     
     private func layout() {
@@ -45,7 +50,6 @@ class TamagotchiDetailPopupViewController: UIViewController {
     
     private func viewLayout() {
         alertView.layer.cornerRadius = Metric.alertViewCornerRadius
-        drawButtonStackViewTopBorder()
     }
     
     private func discussionLabelLayout() {
@@ -55,7 +59,7 @@ class TamagotchiDetailPopupViewController: UIViewController {
     
     private func drawButtonStackViewTopBorder() {
         let border = CALayer()
-        let width = buttonStackView.frame.width
+        let width = buttonStackView.bounds.width
         let height = 0.5
         border.frame = CGRect(x: 0, y: 0, width: width, height: height)
         border.backgroundColor = DefaultColor.defualtFontColor.cgColor
