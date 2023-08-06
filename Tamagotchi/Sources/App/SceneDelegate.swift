@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if !isLaunched {
             presentViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerIdenfier.selectTama)
         } else {
-            presentViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerIdenfier.detailTama)
+            presentViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerIdenfier.main)
         }
         window?.rootViewController = navigationController
         navigationController.viewControllers = [presentViewController]

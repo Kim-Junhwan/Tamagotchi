@@ -11,5 +11,5 @@ enum StoryBoard {
 
 enum ViewControllerIdenfier {
     static let selectTama: String = "SelectTamagotchi"
-    static let detailTama: String = "DetailTamagotchi"
+    static let main: String = "MainViewController"
 }
