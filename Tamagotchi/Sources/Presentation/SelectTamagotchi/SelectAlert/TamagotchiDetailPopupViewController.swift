@@ -76,4 +76,8 @@ class TamagotchiDetailPopupViewController: UIViewController {
         let startButtonCongfiguration = UIButton.makeDefaultButtonConfiguration(backgroundColor: .clear, font: DefaultFont.system.font(size: .medium), textColor: DefaultColor.defualtFontColor, title: Setence.startButtonTitle, cornerRadius: .zero)
         startButton.configuration = startButtonCongfiguration
     }
+    
+    @IBAction func tapCancelButton(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
 }
