@@ -60,4 +60,16 @@ extension SelectTamagotchiViewController: UICollectionViewDelegate, UICollection
         cell.configureCell(tamagotchi: tamagotchiList[indexPath.row])
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectTamagotchi = tamagotchiList[indexPath.row]
+        if selectTamagotchi == .empty {
+            return
+        }
+        let storyboard: UIStoryboard = UIStoryboard(name: StoryBoard.main, bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "TamagotchiDetailPopupViewController") as? TamagotchiDetailPopupViewController else { return }
+        vc.selectTamagotchi = selectTamagotchi
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
 }
