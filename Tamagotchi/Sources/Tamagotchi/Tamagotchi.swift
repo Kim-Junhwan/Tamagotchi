@@ -18,6 +18,19 @@ enum Tamagotchi {
         return image
     }
     
+    var discussion: String {
+        switch self {
+        case .twinkle:
+            return "저는 반짝반짝 빛나는 다마고치입니당 키는 100km 몸무게는 150톤이에용 성격은 빠릅니다~! 열심히 잘 먹고 잘 클 자신은 있습니당 반짝반짝"
+        case .sting:
+            return "저는 선인장 다마고치입니다. 키는 2cm 몸무게는 150g 이에요. 성격은 소심하지만 마음은 따뜻해요. 열심히 잘 먹고 잘 클 자신은 있답니다. 반가워요 주인님!"
+        case .happy:
+            return "저는 방실방실 다마고치입니당 키는 100km 몸무게는 150톤이에용 성격은 화끈하고 날라다닙니당~! 열심히 잘 먹고 잘 클 자신은 있습니당 방실방실"
+        case .empty:
+            return ""
+        }
+    }
+    
     var image: UIImage {
         let defaultImage: UIImage
         switch self {
