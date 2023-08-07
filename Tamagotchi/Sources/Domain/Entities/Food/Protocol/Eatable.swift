@@ -7,4 +7,7 @@
 
 protocol Eatable {
     var exp: Exp { get }
+    
+    func checkCanEat(num: Int) -> Bool
+    func eaten(num: Int)
 }
