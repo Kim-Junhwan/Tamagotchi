@@ -15,7 +15,7 @@ class SelectTamagotchiCollectionViewCell: UICollectionViewCell {
 
     
     func configureCell(tamagotchi: Tamagotchi) {
-        tamagotchiProfileView.tamagotchImageView.image = tamagotchi.image
+        tamagotchiProfileView.tamagotchImageView.image = tamagotchi.defaultImage
         tamagotchiProfileView.nameLabel.text = tamagotchi.name
     }
     
