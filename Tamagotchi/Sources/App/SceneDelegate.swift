@@ -11,13 +11,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         let isLaunched = UserDefaults.standard.bool(forKey: Flow.startBranchCondition)
         let storyboard: UIStoryboard = UIStoryboard(name: StoryBoard.main, bundle: nil)
         let navigationController: UINavigationController = UINavigationController()
+        navigationController.navigationBar.titleTextAttributes = [.foregroundColor: DefaultColor.defualtFontColor]
+        navigationController.navigationBar.tintColor = DefaultColor.defualtFontColor
         let presentViewController: UIViewController
         if !isLaunched {
             presentViewController = storyboard.instantiateViewController(withIdentifier: ViewControllerIdenfier.selectTama)
