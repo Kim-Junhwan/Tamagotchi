@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
         layoutButton(button: feedRiceButton, title: "밥먹기", image: UIImage(systemName: "drop.circle"))
         layoutButton(button: feedWaterButton, title: "물먹기", image: UIImage(systemName: "leaf.circle"))
         layoutStatusLabelStackView(stackView: statusLabelStackView)
+        makeOptionBarButton()
     }
     
     private func updateStatus() {
@@ -51,11 +52,19 @@ class MainViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        updateStatus()
+    override func updateViewConstraints() {
+        super.updateViewConstraints()
         layoutTextField(textField: feedRiceTextField, placeHolder: "밥주세용")
         layoutTextField(textField: feedWaterTextField, placeHolder: "물주세용")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tamagotchiController.updateStatus()
+        updateStatus()
+        title = "\(tamagotchiController.userName)님의 다마고치"
+        speechLabel.textColor = DefaultColor.defualtFontColor
+        speechLabel.font = DefaultFont.bold.font(size: .big)
     }
     
     private func layoutButton(button: UIButton, title: String, image: UIImage?) {
@@ -71,6 +80,8 @@ class MainViewController: UIViewController {
         textField.textAlignment = .center
         textField.drawBorderLine(height: 1.5, direction: .bottom)
         textField.keyboardType = .numberPad
+        textField.textColor = DefaultColor.defualtFontColor
+        textField.clipsToBounds = true
     }
     
     @IBAction func feedRiceButton(_ sender: UIButton) {
@@ -95,5 +106,19 @@ class MainViewController: UIViewController {
         let num = textFieldLogic(textField: feedWaterTextField)
         tamagotchiController.feed(WaterDrop(), num: num)
         updateStatus()
+    }
+    
+    func makeOptionBarButton() {
+        let optionButton = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .done, target: self, action: #selector(pushOptionView))
+        optionButton.tintColor = DefaultColor.defualtFontColor
+        navigationItem.setRightBarButtonItems([optionButton], animated: true)
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = backBarButtonItem
+    }
+    
+    @objc func pushOptionView() {
+        let storyBoard = UIStoryboard(name: StoryBoard.main, bundle: nil)
+        let optionListViewController = storyBoard.instantiateViewController(withIdentifier: "OptionListViewController")
+        navigationController?.pushViewController(optionListViewController, animated: true)
     }
 }

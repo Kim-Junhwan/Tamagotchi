@@ -15,12 +15,20 @@ protocol TamagotchiController: Feeding {
     var eatRiceCount: Int { get set }
     var eatWaterDropCount: Int { get set }
     var currentSpeech: String { get }
+    var userName: String { get }
+    func updateStatus()
 }
 
 class DefaultTamagotchiController: TamagotchiController {
     
-    let speechList = SpeechList(userName: UserDefaultRepository.userName)
-    lazy var currentSpeech: String = speechList.getRandomSpeech()
+    var speechList = SpeechList(userName: UserDefaultRepository.userName)
+    lazy var currentSpeech: String = speechList.currentSpeech
+    
+    var userName: String {
+        get {
+            return UserDefaultRepository.userName
+        }
+    }
     
     var eatRiceCount: Int {
         get {
@@ -76,7 +84,7 @@ class DefaultTamagotchiController: TamagotchiController {
         get {
             let newLevel = Level(exp: exp)
             if oldLevel.value < newLevel.value {
-                currentSpeech = "덕분에 레벨 업 했어요"
+                currentSpeech = "\(userName)님 덕분에 레벨 업 했어요"
             }
             oldLevel = newLevel
             return newLevel
@@ -87,12 +95,17 @@ class DefaultTamagotchiController: TamagotchiController {
         self.exp = Exp(value: UserDefaultRepository.exp)
     }
     
+    func updateStatus() {
+        speechList = SpeechList(userName: UserDefaultRepository.userName)
+        currentSpeech = speechList.currentSpeech
+    }
+    
     func feed(_ food: Eatable, num: Int) {
         if !food.checkCanEat(num: num) {
-            currentSpeech = "한꺼번에 이렇게 많이 먹을 수 없어요!"
+            currentSpeech = "한꺼번에 이렇게 많이 먹을 수 없어요! 적당한 양을 주세요 \(userName)님!"
             return
         }
-        currentSpeech = speechList.getRandomSpeech()
+        currentSpeech = speechList.currentSpeech
         food.eaten(num: num)
         exp = exp + num * food.exp
     }
