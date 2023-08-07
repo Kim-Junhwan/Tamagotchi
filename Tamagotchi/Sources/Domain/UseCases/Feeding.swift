@@ -6,5 +6,5 @@
 //
 
 protocol Feeding {
-    func feed(_ food: Eatable)
+    func feed(_ food: Eatable, num: Int)
 }
