@@ -23,6 +23,6 @@ struct UserDefaultRepository {
     @UserDefault(key: UserDefaultKey.eatWaterDropCount, defaultValue: 0)
     static var eatWaterDropCount: Int
     
-    @UserDefault(key: UserDefaultKey.userName, defaultValue: "")
+    @UserDefault(key: UserDefaultKey.userName, defaultValue: "대장")
     static var userName: String
 }
