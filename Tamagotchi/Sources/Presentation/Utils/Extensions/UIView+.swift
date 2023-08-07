@@ -22,7 +22,7 @@ extension UIView {
         case .top:
             borderFrame = CGRect(x: 0, y: 0, width: width, height: height)
         case .bottom:
-            borderFrame = CGRect(x: 0, y: self.frame.maxY, width: width, height: height)
+            borderFrame = CGRect(x: 0, y: self.bounds.maxY, width: width, height: height)
         }
         border.frame = borderFrame
         border.backgroundColor = DefaultColor.defualtFontColor.cgColor
