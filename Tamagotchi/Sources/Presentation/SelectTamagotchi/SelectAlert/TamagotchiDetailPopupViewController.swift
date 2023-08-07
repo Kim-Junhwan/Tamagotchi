@@ -29,7 +29,7 @@ class TamagotchiDetailPopupViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tamagotchiProfileView.tamagotchImageView.image = selectTamagotchi.image
+        tamagotchiProfileView.tamagotchImageView.image = selectTamagotchi.defaultImage
         tamagotchiProfileView.nameLabel.text = selectTamagotchi.name
         discussionLabel.text = selectTamagotchi.discussion
         layout()
@@ -75,4 +75,11 @@ class TamagotchiDetailPopupViewController: UIViewController {
     @IBAction func tapCancelButton(_ sender: UIButton) {
         dismiss(animated: true)
     }
+    
+    @IBAction func tapStartButton(_ sender: UIButton) {
+        UserDefaultRepository.isLaunched = true
+        UserDefaultRepository.selectedTama = selectTamagotchi.name
+        changeRootView(viewControllerIdentifier: ViewControllerIdenfier.main)
+    }
+    
 }
