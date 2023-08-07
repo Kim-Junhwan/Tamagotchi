@@ -14,7 +14,7 @@ extension UIViewController {
         let currentWindow = scene.window
         let storyBoard = UIStoryboard(name: StoryBoard.main, bundle: nil)
         let viewController = storyBoard.instantiateViewController(withIdentifier: viewControllerIdentifier)
-        currentWindow?.rootViewController = viewController
-        currentWindow?.makeKeyAndVisible()
+        guard let navigationController = currentWindow?.rootViewController as? UINavigationController else { return }
+        navigationController.viewControllers = [viewController]
     }
 }
