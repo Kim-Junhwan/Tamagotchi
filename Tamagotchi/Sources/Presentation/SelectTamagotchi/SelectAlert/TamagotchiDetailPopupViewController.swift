@@ -80,6 +80,7 @@ class TamagotchiDetailPopupViewController: UIViewController {
         UserDefaultRepository.isLaunched = true
         UserDefaultRepository.selectedTama = selectTamagotchi.name
         changeRootView(viewControllerIdentifier: ViewControllerIdenfier.main)
+        dismiss(animated: false)
     }
     
 }
