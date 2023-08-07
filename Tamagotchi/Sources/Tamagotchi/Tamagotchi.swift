@@ -7,16 +7,11 @@
 
 import UIKit
 
-enum Tamagotchi {
-    case twinkle
-    case sting
-    case happy
+enum Tamagotchi: String {
+    case twinkle = "반짝반짝 다마고치"
+    case sting = "따끔따끔 다마고치"
+    case happy = "방실방실 다마고치"
     case empty
-    
-    private func getSafeImage(imageNamed: String) -> UIImage {
-        guard let image = UIImage(named: imageNamed) else { return UIImage() }
-        return image
-    }
     
     var discussion: String {
         switch self {
@@ -31,19 +26,24 @@ enum Tamagotchi {
         }
     }
     
-    var image: UIImage {
-        let defaultImage: UIImage
+    private var imageName: String {
         switch self {
         case .twinkle:
-            defaultImage = getSafeImage(imageNamed: "3-6")
+            return "3-"
         case .sting:
-            defaultImage = getSafeImage(imageNamed: "1-6")
+            return "1-"
         case .happy:
-            defaultImage = getSafeImage(imageNamed: "2-6")
+            return "2-"
         case .empty:
-            defaultImage = getSafeImage(imageNamed: "noImage")
+            return "noImage"
         }
-        return defaultImage
+    }
+    
+    var defaultImage: UIImage {
+        if self == .empty {
+            return getSafeImage(imageNamed: self.imageName)
+        }
+        return getSafeImage(imageNamed: "\(self.imageName)6")
     }
     
     var name: String {
@@ -57,5 +57,17 @@ enum Tamagotchi {
         case .empty:
             return "준비중이에요"
         }
+    }
+    
+    private func getSafeImage(imageNamed: String) -> UIImage {
+        guard let image = UIImage(named: imageNamed) else { return UIImage() }
+        return image
+    }
+    
+    func getLevelImage(level: Level) -> UIImage {
+        if level.value == 10 {
+            return getSafeImage(imageNamed: "\(imageName)9")
+        }
+        return getSafeImage(imageNamed: "\(imageName)\(level.value)")
     }
 }
