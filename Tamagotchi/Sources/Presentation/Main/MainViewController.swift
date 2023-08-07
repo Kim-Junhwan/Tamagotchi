@@ -18,13 +18,25 @@ class MainViewController: UIViewController {
     @IBOutlet weak var feedRiceButton: UIButton!
     @IBOutlet weak var feedWaterTextField: UITextField!
     @IBOutlet weak var feedWaterButton: UIButton!
-    
     @IBOutlet weak var statusLabelStackView: UIStackView!
+    
+    let tamagotchiController: TamagotchiController = DefaultTamagotchiController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tamagotchiProfileView.tamagotchImageView.image = tamagotchiController.tamagotchiImage
+        tamagotchiProfileView.nameLabel.text = tamagotchiController.tamagotchiName
         layoutButton(button: feedRiceButton, title: "밥먹기", image: UIImage(systemName: "drop.circle"))
         layoutButton(button: feedWaterButton, title: "물먹기", image: UIImage(systemName: "leaf.circle"))
         layoutStatusLabelStackView(stackView: statusLabelStackView)
+    }
+    
+    private func updateStatus() {
+        levelLabel.text = String(tamagotchiController.level.value)
+        riceCountLabel.text = String(tamagotchiController.eatRiceCount)
+        waterDropLabel.text = String(tamagotchiController.eatWaterDropCount)
+        tamagotchiProfileView.tamagotchImageView.image = tamagotchiController.tamagotchiImage
+        speechLabel.text = tamagotchiController.currentSpeech
     }
     
     func layoutStatusLabelStackView(stackView: UIStackView) {
@@ -41,6 +53,7 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        updateStatus()
         layoutTextField(textField: feedRiceTextField, placeHolder: "밥주세용")
         layoutTextField(textField: feedWaterTextField, placeHolder: "물주세용")
     }
@@ -57,6 +70,30 @@ class MainViewController: UIViewController {
         textField.font = DefaultFont.bold.font(size: .big)
         textField.textAlignment = .center
         textField.drawBorderLine(height: 1.5, direction: .bottom)
+        textField.keyboardType = .numberPad
     }
     
+    @IBAction func feedRiceButton(_ sender: UIButton) {
+        let num = textFieldLogic(textField: feedRiceTextField)
+        tamagotchiController.feed(Rice(), num: num)
+        updateStatus()
+    }
+    
+    func textFieldLogic(textField: UITextField) -> Int {
+        guard let textFieldText = textField.text else { return 1 }
+        let num: Int
+        if textFieldText == "" || textFieldText == "0" {
+            num = 1
+        } else {
+            num = Int(textFieldText) ?? .zero
+        }
+        textField.text = ""
+        return num
+    }
+    
+    @IBAction func feedWaterButton(_ sender: UIButton) {
+        let num = textFieldLogic(textField: feedWaterTextField)
+        tamagotchiController.feed(WaterDrop(), num: num)
+        updateStatus()
+    }
 }
