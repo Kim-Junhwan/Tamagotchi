@@ -58,7 +58,7 @@ class SetUserNameViewController: UIViewController, Alertable {
         } catch UserNameError.sameName {
             errorAlert(message: "같은 닉네임 입니다.")
         } catch {
-            print(error)
+            print("unknownError: \(error)")
         }
     }
     

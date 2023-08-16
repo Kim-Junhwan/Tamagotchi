@@ -86,8 +86,18 @@ class MainViewController: UIViewController {
     
     @IBAction func feedRiceButton(_ sender: UIButton) {
         let num = textFieldLogic(textField: feedRiceTextField)
-        tamagotchiController.feed(Rice(), num: num)
-        updateStatus()
+        feed(food: Rice(), eatCount: num)
+    }
+    
+    private func feed(food: Eatable, eatCount: Int) {
+        do {
+            try tamagotchiController.feed(food, num: eatCount)
+            updateStatus()
+        } catch FeedingError.toomuchFeed {
+            speechLabel.text = "한꺼번에 이렇게 많은 밥을 먹을 수 없어요."
+        } catch {
+            print("unknownError: \(error)")
+        }
     }
     
     func textFieldLogic(textField: UITextField) -> Int {
@@ -104,8 +114,7 @@ class MainViewController: UIViewController {
     
     @IBAction func feedWaterButton(_ sender: UIButton) {
         let num = textFieldLogic(textField: feedWaterTextField)
-        tamagotchiController.feed(WaterDrop(), num: num)
-        updateStatus()
+        feed(food: WaterDrop(), eatCount: num)
     }
     
     func makeOptionBarButton() {

@@ -100,10 +100,9 @@ class DefaultTamagotchiController: TamagotchiController {
         currentSpeech = speechList.currentSpeech
     }
     
-    func feed(_ food: Eatable, num: Int) {
+    func feed(_ food: Eatable, num: Int) throws {
         if !food.checkCanEat(num: num) {
-            currentSpeech = "한꺼번에 이렇게 많이 먹을 수 없어요! 적당한 양을 주세요 \(userName)님!"
-            return
+            throw FeedingError.toomuchFeed
         }
         currentSpeech = speechList.currentSpeech
         food.eaten(num: num)
