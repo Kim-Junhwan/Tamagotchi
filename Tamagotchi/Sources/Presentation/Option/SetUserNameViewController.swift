@@ -7,7 +7,12 @@
 
 import UIKit
 
-class SetUserNameViewController: UIViewController {
+enum UserNameError: Error {
+    case outOfScope
+    case sameName
+}
+
+class SetUserNameViewController: UIViewController, Alertable {
 
     @IBOutlet weak var setUserNameTextField: UITextField!
     
@@ -46,17 +51,28 @@ class SetUserNameViewController: UIViewController {
     
     @objc func saveUserName() {
         guard let name = setUserNameTextField.text else { return }
-        if checkIsCorrectName(name: name) {
-            UserDefaultRepository.userName = name
-            self.navigationController?.popViewController(animated: true)
+        do {
+            try saveUserNameAtUserDefaults(userName: name)
+        } catch UserNameError.outOfScope {
+            errorAlert(message: "2~6자리의 닉네임을 입력해주세요")
+        } catch UserNameError.sameName {
+            errorAlert(message: "같은 닉네임 입니다.")
+        } catch {
+            print(error)
         }
     }
     
-    func checkIsCorrectName(name: String) -> Bool {
-        if name.count < 2 || name.count > 6{
-            return false
+    func saveUserNameAtUserDefaults(userName: String) throws {
+        guard userName.count >= 2 && userName.count <= 6 else {
+            throw UserNameError.outOfScope
         }
-        return true
+        
+        guard UserDefaultRepository.userName != userName else {
+            throw UserNameError.sameName
+        }
+        
+        UserDefaultRepository.userName = userName
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

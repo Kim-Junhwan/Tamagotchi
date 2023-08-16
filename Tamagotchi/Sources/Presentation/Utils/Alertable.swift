@@ -18,5 +18,12 @@ extension Alertable where Self: UIViewController {
         alert.addAction(defaultActionBlock)
         self.present(alert, animated: true)
     }
+    
+    func errorAlert(title: String = "에러", message: String, cancelTitle: String = "확인") {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: cancelTitle, style: .cancel)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+    }
 }
 
