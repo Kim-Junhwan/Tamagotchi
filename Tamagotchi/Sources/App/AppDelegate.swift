@@ -13,7 +13,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if let error = error {
+                print(error)
+            } else {
+                let content = UNMutableNotificationContent()
+                content.title = "다마고치가 배고파합니다."
+                content.body = "지금 접속해 다마고치에게 먹이를 주세요!"
+                var dateComponents = DateComponents()
+                dateComponents.calendar = Calendar.current
+                dateComponents.hour = 8
+                dateComponents.minute = 30
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+                center.add(request) { error in
+                    if error != nil {
+                        print(error)
+                    }
+                }
+            }
+        }
         return true
     }
 
