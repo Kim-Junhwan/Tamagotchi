@@ -30,6 +30,18 @@ class MainViewController: UIViewController {
         layoutButton(button: feedWaterButton, title: "물먹기", image: UIImage(systemName: "leaf.circle"))
         layoutStatusLabelStackView(stackView: statusLabelStackView)
         makeOptionBarButton()
+        title = UserDefaultRepository.userName
+        receiveSetUserNameNotify()
+    }
+    
+    private func receiveSetUserNameNotify() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUserName(notification:)), name: .init("username"), object: nil)
+    }
+    
+    @objc func updateUserName(notification: NSNotification) {
+        if let name = notification.userInfo?["name"] as? String {
+            title = "\(name)님의 다마고치"
+        }
     }
     
     private func updateStatus() {
@@ -62,7 +74,7 @@ class MainViewController: UIViewController {
         super.viewDidAppear(animated)
         tamagotchiController.updateStatus()
         updateStatus()
-        title = "\(tamagotchiController.userName)님의 다마고치"
+        
         speechLabel.textColor = DefaultColor.defualtFontColor
         speechLabel.font = DefaultFont.bold.font(size: .big)
     }

@@ -18,16 +18,21 @@ class OptionListViewController: UIViewController, Alertable {
         super.viewDidLoad()
         setNavigationBar()
         setTableView()
+        receiveSetUserNameNotify()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        tableView.reloadData()
+    private func receiveSetUserNameNotify() {
+        NotificationCenter.default.addObserver(self, selector: #selector(updateUserName(notification:)), name: .init("username"), object: nil)
+    }
+    
+    @objc func updateUserName(notification: NSNotification) {
+        if let _ = notification.userInfo?["name"] as? String {
+            self.tableView.reloadData()
+        }
     }
     
     private func setNavigationBar() {
         title = "설정"
-        
     }
     
     private func setTableView() {

@@ -51,6 +51,7 @@ class SetUserNameViewController: UIViewController, Alertable {
     
     @objc func saveUserName() {
         guard let name = setUserNameTextField.text else { return }
+        NotificationCenter.default.post(name: .init("username"), object: nil, userInfo: ["name":name])
         do {
             try saveUserNameAtUserDefaults(userName: name)
         } catch UserNameError.outOfScope {
